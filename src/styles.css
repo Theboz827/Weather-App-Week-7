@@ -1,8 +1,11 @@
 .container {
-  border: 2px solid gray;
-  padding: 10px;
   font-family: "Open Sans", sans-serif;
   background-color: #ebf7ff;
+}
+
+.weather-wrapper {
+  border: 2px solid gray;
+  padding: 20px;
   margin-top: 10px;
 }
 
