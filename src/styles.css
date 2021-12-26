@@ -1,0 +1,77 @@
+.container {
+  border: 2px solid gray;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #ebf7ff;
+  margin-top: 10px;
+}
+
+.city-heading {
+  font-size: 36px;
+}
+.precipitation-heading {
+  font-size: 24px;
+}
+
+#degrees {
+  font-size: 44px;
+  font-weight: bold;
+}
+#celsius {
+  font-size: 13px;
+  color: blue;
+  text-decoration: underline;
+}
+
+#fahrenheit {
+  font-size: 13px;
+  color: blue;
+  text-decoration: underline;
+}
+.wind-heading {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#day-time-weather {
+  font-size: 20px;
+}
+.footer {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.emoji-heading {
+  font-size: 36px;
+}
+.emoji {
+  font-size: 24px;
+}
+
+.daily-temperature {
+  font-size: 20px;
+}
+.alignment {
+  text-align: center;
+}
+
+.days {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+ul {
+  display: block;
+  list-style-type: none;
+}
+
+li {
+  padding-left: 0;
+}
+.search-button {
+  margin-top: 2px;
+}
+button {
+  margin-top: 2px;
+}
