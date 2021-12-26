@@ -53,7 +53,7 @@
                 <span class="emoji-heading">❄️</span>
                 <!-- insert C to F-->
                 <span id="degrees"> &deg;</span>
-                <!---<span id="celsius">C</span>| <span id="fahrenheit">F</span> -->
+                <span id="celsius">C</span> | <span id="fahrenheit">F</span>
               </p>
             </div>
             <div class="col-md-3">
@@ -61,19 +61,19 @@
               <ul>
                 <!--injected current date and time-->
                 <li id="day-time-weather">Monday 13:30</li>
-                <li>Snow</li>
+                <li id="weather-desc"></li>
               </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 precipitation-section">
               <ul>
-                <li>Precipitation: 10%</li>
-                <li>Humidity: 20%</li>
-                <li>Wind: 5km/h</li>
+                <li>Precipitation: <span id="precipitation"></span>%</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
             <div class="col-md-3"></div>
           </div>
-          <div class="row">
+          <div class="row days-of-week">
             <div class="col-1"></div>
             <div class="col-2">
               <h4 class="days">Mon</h4>

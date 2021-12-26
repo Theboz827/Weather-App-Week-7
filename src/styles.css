@@ -15,8 +15,20 @@
 .city-heading {
   font-size: 36px;
 }
-.precipitation-heading {
-  font-size: 24px;
+.precipitation-section {
+  padding-top: 15px;
+}
+
+#precipitation {
+}
+#humidity {
+}
+
+#wind {
+}
+
+.days-of-week {
+  padding-top: 15px;
 }
 
 #degrees {
@@ -37,6 +49,10 @@
 .wind-heading {
   font-size: 18px;
   font-weight: normal;
+}
+
+#weather-desc {
+  text-transform: capitalize;
 }
 
 #day-time-weather {
@@ -68,6 +84,8 @@
 }
 h1 {
   margin-bottom: 0;
+  padding-top: 10px;
+  font-size: 30px;
 }
 ul {
   margin: 0;

@@ -58,11 +58,15 @@ function showCurrentTemp(response) {
   let displayCity = document.querySelector("h1");
   displayCity.innerHTML = `${city}`;
   //grab precipitation and wind response data
-  /*let displayPrec = document.querySelector("h2");
-  displayPrec.innerHTML = `${response.data.weather[0].description}`;
-  let displayWind = document.querySelector("h3");
-  displayWind.innerHTML = `${response.data.wind}`;
-  */
+  let displayWeatherDesc = document.querySelector("#weather-desc");
+  displayWeatherDesc.innerHTML = `${response.data.weather[0].description}`;
+  let displayHumidity = document.querySelector("#humidity");
+  displayHumidity.innerHTML = `${response.data.main.humidity}`;
+  let displayWind = document.querySelector("#wind");
+  displayWind.innerHTML = `${Math.round(response.data.wind.speed)}`;
+  //Precipication not set up with correct field yet. Add later
+  //let displayPrecipitation = document.querySelector("#precipitation");
+  //displayPrecipitation.innerHTML = `${response.data.clouds.all}`;
 }
 function showPosition(position) {
   let lat = position.coords.latitude;
@@ -80,3 +84,21 @@ function getCurrentPosition(event) {
 
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
+
+//Convert C to F
+/* function cToF(event) {
+  event.preventDefault();
+  let convertToF = document.querySelector("#degrees");
+  convertToF.innerHTML = "19°";
+}
+let degreesSwitch = document.querySelector("#celsius");
+degreesSwitch.addEventListener("click", cToF);
+
+function fToC(event) {
+  event.preventDefault();
+  let convertToC = document.querySelector("#degrees");
+  convertToC.innerHTML = "40°";
+}
+let degreesSwitchTwo = document.querySelector("#fahrenheit");
+degreesSwitchTwo.addEventListener("click", fToC);
+*/
