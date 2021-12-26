@@ -20,7 +20,7 @@ function formatDate() {
   ];
   let weekDays = days[today.getDay()];
   let displayToday = `${weekDays} ${hours}:${minutes}`;
-  let dayTime = document.querySelector("p#day-time-weather");
+  let dayTime = document.querySelector("li#day-time-weather");
   dayTime.innerHTML = displayToday;
   return displayToday;
 }
