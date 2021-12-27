@@ -32,7 +32,7 @@
 }
 
 #degrees {
-  font-size: 44px;
+  font-size: 36px;
   font-weight: bold;
 }
 #celsius {
@@ -63,7 +63,7 @@
   font-style: italic;
 }
 
-.emoji-heading {
+#icon {
   font-size: 36px;
 }
 .emoji {

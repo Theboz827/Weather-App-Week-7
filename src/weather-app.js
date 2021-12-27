@@ -1,4 +1,27 @@
-//Feature #1
+function formatDate(timestamp) {
+  //calculate the date
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
+/* old function
 let today = new Date();
 function formatDate() {
   let hours = today.getHours();
@@ -25,6 +48,7 @@ function formatDate() {
   return displayToday;
 }
 console.log(formatDate());
+*/
 
 //Feature #2
 function search(event) {
@@ -54,20 +78,30 @@ function showCurrentTemp(response) {
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
   let displayDegree = document.querySelector("#degrees");
-  displayDegree.innerHTML = `${temperature}°C`;
   let displayCity = document.querySelector("h1");
-  displayCity.innerHTML = `${city}`;
-  //grab precipitation and wind response data
   let displayWeatherDesc = document.querySelector("#weather-desc");
-  displayWeatherDesc.innerHTML = `${response.data.weather[0].description}`;
   let displayHumidity = document.querySelector("#humidity");
-  displayHumidity.innerHTML = `${response.data.main.humidity}`;
   let displayWind = document.querySelector("#wind");
+  let dateElement = document.querySelector("li#day-time-weather");
+  let iconElement = document.querySelector("#icon");
+  displayDegree.innerHTML = `${temperature}°C`;
+  displayCity.innerHTML = `${city}`;
+  displayWeatherDesc.innerHTML = `${response.data.weather[0].description}`;
+  displayHumidity.innerHTML = `${response.data.main.humidity}`;
   displayWind.innerHTML = `${Math.round(response.data.wind.speed)}`;
-  //Precipication not set up with correct field yet. Add later
+  //display weekday and time of location
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  //Precipitation not set up with correct field yet. Add later
   //let displayPrecipitation = document.querySelector("#precipitation");
   //displayPrecipitation.innerHTML = `${response.data.clouds.all}`;
 }
+
+//Locate current position
+
 function showPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
