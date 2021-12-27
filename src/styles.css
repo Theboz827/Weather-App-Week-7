@@ -32,7 +32,7 @@
 }
 
 #degrees {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: bold;
 }
 #celsius {
@@ -99,6 +99,7 @@ li {
 }
 .search-button {
   margin-top: 2px;
+  padding: 5px 15px;
 }
 button {
   margin-top: 2px;

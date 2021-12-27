@@ -84,7 +84,7 @@ function showCurrentTemp(response) {
   let displayWind = document.querySelector("#wind");
   let dateElement = document.querySelector("li#day-time-weather");
   let iconElement = document.querySelector("#icon");
-  displayDegree.innerHTML = `${temperature}°C`;
+  displayDegree.innerHTML = `${temperature}°`;
   displayCity.innerHTML = `${city}`;
   displayWeatherDesc.innerHTML = `${response.data.weather[0].description}`;
   displayHumidity.innerHTML = `${response.data.main.humidity}`;
