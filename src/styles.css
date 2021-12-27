@@ -38,13 +38,13 @@
 #celsius {
   font-size: 13px;
   color: blue;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 #fahrenheit {
   font-size: 13px;
   color: blue;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .wind-heading {
   font-size: 18px;
@@ -53,6 +53,15 @@
 
 #weather-desc {
   text-transform: capitalize;
+}
+
+.active {
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
 }
 
 #day-time-weather {
