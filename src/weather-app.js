@@ -50,7 +50,6 @@ function formatDate() {
 console.log(formatDate());
 */
 
-//Feature #2
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-text-input");
@@ -84,6 +83,7 @@ function showCurrentTemp(response) {
   let displayWind = document.querySelector("#wind");
   let dateElement = document.querySelector("li#day-time-weather");
   let iconElement = document.querySelector("#icon");
+  celciusTemp = response.data.main.temp;
   displayDegree.innerHTML = `${temperature}°`;
   displayCity.innerHTML = `${city}`;
   displayWeatherDesc.innerHTML = `${response.data.weather[0].description}`;
@@ -101,7 +101,6 @@ function showCurrentTemp(response) {
 }
 
 //Locate current position
-
 function showPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
@@ -119,20 +118,26 @@ function getCurrentPosition(event) {
 let button = document.querySelector("button");
 button.addEventListener("click", getCurrentPosition);
 
-//Convert C to F
-/* function cToF(event) {
+//Convert Celsius to Fahrenheit
+function celsiusToFahrenheit(event) {
   event.preventDefault();
-  let convertToF = document.querySelector("#degrees");
-  convertToF.innerHTML = "19°";
+  //alert("link clicked");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 52;
+  //alert(fahrenheitTemp);
+  let convertToFahrenheit = document.querySelector("#degrees");
+  convertToFahrenheit.innerHTML = Math.round(fahrenheitTemp);
 }
-let degreesSwitch = document.querySelector("#celsius");
-degreesSwitch.addEventListener("click", cToF);
 
-function fToC(event) {
+let celsiusTemp = null;
+
+let convertCelciusToFahrenheit = document.querySelector("#fahrenheit");
+convertCelciusToFahrenheit.addEventListener("click", celsiusToFahrenheit);
+/*
+function fahrenheitToCelsius(event) {
   event.preventDefault();
-  let convertToC = document.querySelector("#degrees");
-  convertToC.innerHTML = "40°";
+  let convertToCelsius = document.querySelector("#degrees");
+  convertToCelsius.innerHTML = "40°";
 }
-let degreesSwitchTwo = document.querySelector("#fahrenheit");
-degreesSwitchTwo.addEventListener("click", fToC);
+let convertFahrenheitToCelsius = document.querySelector("#celsius");
+convertFahrenheitToCelsius.addEventListener("click", fahrenheitToCelsius);
 */
