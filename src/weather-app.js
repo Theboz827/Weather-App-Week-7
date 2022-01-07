@@ -146,3 +146,9 @@ function fahrenheitToCelsius(event) {
   convertToCelsius.innerHTML = "40°";
 }
 */
+
+//week 8
+//forecast plan
+//add HTML and CSS for forecast
+//add the API call to retrieve forecast
+//replace dummy data with real data
