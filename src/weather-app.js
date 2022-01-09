@@ -21,34 +21,6 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
-/* old function
-let today = new Date();
-function formatDate() {
-  let hours = today.getHours();
-  let minutes = today.getMinutes();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let weekDays = days[today.getDay()];
-  let displayToday = `${weekDays} ${hours}:${minutes}`;
-  let dayTime = document.querySelector("li#day-time-weather");
-  dayTime.innerHTML = displayToday;
-  return displayToday;
-}
-console.log(formatDate());
-*/
 
 function search(event) {
   event.preventDefault();
@@ -72,6 +44,14 @@ function search(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
+//get coordinates
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "a112a1581159b740378440ea43ef872d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 //get current temperature
 function showCurrentTemp(response) {
   let temperature = Math.round(response.data.main.temp);
@@ -95,9 +75,8 @@ function showCurrentTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  //Precipitation not set up with correct field yet. Add later
-  //let displayPrecipitation = document.querySelector("#precipitation");
-  //displayPrecipitation.innerHTML = `${response.data.clouds.all}`;
+  //console.log(response.data);
+  getForecast(response.data.coord);
 }
 
 //Locate current position
@@ -147,8 +126,9 @@ function fahrenheitToCelsius(event) {
 }
 */
 
-//week 8 additions
-function displayForecast() {
+//forecast section
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast-section");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -173,6 +153,7 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
 }
 
 displayForecast();
