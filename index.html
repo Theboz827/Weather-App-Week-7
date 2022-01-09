@@ -50,23 +50,21 @@
         -->
           <div class="row">
             <div class="col-md-3">
-              <p>
-                <span>
-                  <img
-                    src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
-                    width="75"
-                    height="75"
-                    id="icon"
-                  />
-                </span>
-                <!-- insert C to F-->
-                <span id="degrees"> &deg;</span>
-                <span><a href="#" id="celsius" class="active">&#176;C</a></span>
-                |
-                <span
-                  ><a href="#" id="fahrenheit" class="active">&#176;F</a></span
-                >
-              </p>
+              <span>
+                <img
+                  src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
+                  width="75"
+                  height="75"
+                  id="icon"
+                />
+              </span>
+              <!-- insert C to F-->
+              <span id="degrees"> &deg;</span>
+              <span><a href="#" id="celsius" class="active">&#176;C</a></span>
+              |
+              <span
+                ><a href="#" id="fahrenheit" class="active">&#176;F</a></span
+              >
             </div>
             <div class="col-md-3">
               <h1 id="city-heading">Flagstaff</h1>
@@ -85,99 +83,87 @@
             </div>
             <div class="col-md-3"></div>
           </div>
-          <div class="row days-of-week">
-            <div class="col-1"></div>
-            <div class="col-2">
-              <h4 class="days">Mon</h4>
+
+          <div class="days-of-week" id="forecast-section">
+            <!-- HTML injected into JS file
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-2">
+                <h4 class="days">Mon</h4>
+                <span class="emoji">
+                  <img
+                    src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
+                    width="40"
+                    height="40"
+                    id="icon"
+                  />
+                </span>
+                <div class="daily-temps">
+                  <span class="daily-temperature-max">30&deg; </span>
+                  <span class="daily-temperature-min">&nbsp;20&deg;</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <h4 class="days">Tue</h4>
+                <span class="emoji">
+                  <img
+                    src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
+                    width="40"
+                    height="40"
+                    id="icon"
+                /></span>
+                <div class="daily-temps">
+                  <span class="daily-temperature-max">40&deg; </span>
+                  <span class="daily-temperature-min">&nbsp;35&deg;</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <h4 class="days">Wed</h4>
+                <span class="emoji">
+                  <img
+                    src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
+                    width="40"
+                    height="40"
+                    id="icon"
+                /></span>
+                <div class="daily-temps">
+                  <span class="daily-temperature-max">37&deg; </span>
+                  <span class="daily-temperature-min">&nbsp;32&deg;</span>
+                </div>
+              </div>
+              <div class="col-2">
+                <h4 class="days">Thu</h4>
+                <span class="emoji">
+                  <img
+                    src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
+                    width="40"
+                    height="40"
+                    id="icon"
+                /></span>
+                <div class="daily-temps">
+                  <span class="daily-temperature-max">36&deg; </span>
+                  <span class="daily-temperature-min">&nbsp;28&deg;</span>
+                </div>
+              </div>
+
+              <div class="col-2">
+                <h4 class="days">Fri</h4>
+                <span class="emoji">
+                  <img
+                    src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
+                    width="40"
+                    height="40"
+                    id="icon"
+                /></span>
+                <div class="daily-temps">
+                  <span class="daily-temperature-max">32&deg; </span>
+                  <span class="daily-temperature-min">&nbsp;20&deg;</span>
+                </div>
+              </div>
             </div>
-            <div class="col-2">
-              <h4 class="days">Tue</h4>
-            </div>
-            <div class="col-2">
-              <h4 class="days">Wed</h4>
-            </div>
-            <div class="col-2">
-              <h4 class="days">Thu</h4>
-            </div>
-            <div class="col-2">
-              <h4 class="days">Fri</h4>
-            </div>
-            <div class="col-1"></div>
+             -->
           </div>
-          <div class="row alignment">
-            <div class="col-1"></div>
-            <div class="col-2">
-              <p>
-                <span class="emoji"
-                  ><span>
-                    <img
-                      src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
-                      width="40"
-                      height="40"
-                      id="icon"
-                    /> </span></span
-                ><br /><span class="daily-temperature-max">30&deg; </span>
-                <span class="daily-temperature-min">&nbsp;20&deg;</span>
-              </p>
-            </div>
-            <div class="col-2">
-              <p>
-                <span class="emoji"
-                  ><span>
-                    <img
-                      src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
-                      width="40"
-                      height="40"
-                      id="icon"
-                    /> </span></span
-                ><br /><span class="daily-temperature-max">40&deg; </span>
-                <span class="daily-temperature-min">&nbsp;35&deg;</span>
-              </p>
-            </div>
-            <div class="col-2">
-              <p>
-                <span class="emoji"
-                  ><span>
-                    <img
-                      src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
-                      width="40"
-                      height="40"
-                      id="icon"
-                    /> </span></span
-                ><br /><span class="daily-temperature-max">37&deg; </span>
-                <span class="daily-temperature-min">&nbsp;32&deg;</span>
-              </p>
-            </div>
-            <div class="col-2">
-              <p>
-                <span class="emoji"
-                  ><span>
-                    <img
-                      src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
-                      width="40"
-                      height="40"
-                      id="icon"
-                    /> </span></span
-                ><br /><span class="daily-temperature-max">35&deg; </span>
-                <span class="daily-temperature-min">&nbsp;25&deg;</span>
-              </p>
-            </div>
-            <div class="col-2">
-              <p>
-                <span class="emoji"
-                  ><span>
-                    <img
-                      src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
-                      width="40"
-                      height="40"
-                      id="icon"
-                    /> </span></span
-                ><br /><span class="daily-temperature-max">32&deg; </span>
-                <span class="daily-temperature-min">&nbsp;20&deg;</span>
-              </p>
-            </div>
-            <div class="col-1"></div>
-          </div>
+          <!-- end injected code -->
         </div>
 
         <div class="row">

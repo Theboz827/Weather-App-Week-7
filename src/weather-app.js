@@ -147,8 +147,32 @@ function fahrenheitToCelsius(event) {
 }
 */
 
-//week 8
-//forecast plan
-//add HTML and CSS for forecast
-//add the API call to retrieve forecast
-//replace dummy data with real data
+//week 8 additions
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast-section");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                <h4 class="days">${day}</h4>
+                <span class="emoji">
+                  <img
+                    src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
+                    width="40"
+                    height="40"
+                    id="icon"
+                  />
+                </span>
+                <div class="daily-temps">
+                  <span class="daily-temperature-max">30&deg; </span>
+                  <span class="daily-temperature-min">&nbsp;20&deg;</span>
+                </div>
+              </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();

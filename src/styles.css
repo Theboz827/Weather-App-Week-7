@@ -79,8 +79,13 @@
 }
 .emoji {
   font-size: 24px;
+  display: block;
+  text-align: center;
 }
 
+.daily-temps {
+  text-align: center;
+}
 .daily-temperature-max {
   font-size: 18px;
   color: rgb(4, 0, 37);
@@ -94,6 +99,10 @@
 
 .alignment {
   text-align: center;
+}
+
+#forecast-section {
+  padding-left: 15%;
 }
 
 .days {
