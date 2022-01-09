@@ -1,6 +1,7 @@
 function formatDate(timestamp) {
   //calculate the date
   let date = new Date(timestamp);
+
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -20,6 +21,13 @@ function formatDate(timestamp) {
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return days[day];
 }
 
 function search(event) {
@@ -128,32 +136,39 @@ function fahrenheitToCelsius(event) {
 
 //forecast section
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast-section");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-                <h4 class="days">${day}</h4>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+                <div class="days">${formatDay(forecastDay.dt)}</div>
                 <span class="emoji">
                   <img
-                    src="https://restya.com/wp-content/uploads/elementor/thumbs/restya-weather-cb-p7zb4va1wbiy6t2ftuavc5jigqxy7nbmfhl8ldtp90.png"
+                    src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png"
                     width="40"
                     height="40"
                     id="icon"
                   />
                 </span>
                 <div class="daily-temps">
-                  <span class="daily-temperature-max">30&deg; </span>
-                  <span class="daily-temperature-min">&nbsp;20&deg;</span>
+                  <span class="daily-temperature-max">${Math.round(
+                    forecastDay.temp.max
+                  )}&deg;</span>
+                  <span class="daily-temperature-min">&nbsp;${Math.round(
+                    forecastDay.temp.min
+                  )}&deg;</span>
                 </div>
               </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
-
-displayForecast();
+//displayForecast(response);
