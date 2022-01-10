@@ -171,4 +171,3 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
-//displayForecast(response);
